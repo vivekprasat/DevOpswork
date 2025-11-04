@@ -23,7 +23,7 @@ jobs:
           python -m unittest || echo "No tests found, skipping"
 
       - name: Build Docker image
-        run: docker build -t myapp:latest
+        run: docker build -t myapp:latest .
 
       - name: pushing the image
         run: docker push myapp:latest
