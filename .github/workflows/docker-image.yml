@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-test-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted   # ✅ Use your local runner (where Docker + Minikube are installed)
 
     steps:
       # Step 1: Checkout the repo
@@ -17,38 +17,48 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ' 3.12.10'
+          python-version: '3.12'   # ✅ Correct format — no leading space, valid version
 
       # Step 3: Install dependencies & run tests
       - name: Install dependencies & test
         run: |
+          pip install --upgrade pip
           pip install flask
           python -m unittest || echo "No tests found, skipping"
 
-      # Step 4: Log in to Docker Hub (login must happen BEFORE build/push)
+      # Step 4: Log in to Docker Hub
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        run: |
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       # Step 5: Build Docker image
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest .
+        run: |
+          docker build -t "${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest" .
 
       # Step 6: Push Docker image to Docker Hub
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest
-        
-        #Step 8: Configure kubeconfig for Minikube or kind
-      - name: Configure kubeconfig
         run: |
-          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
-
-
+          docker push "${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest"
 
       # Step 7: Set up kubectl
       - name: Setup kubectl
         uses: azure/setup-kubectl@v4
 
-      # Step 9: Deploy to Kubernetes
+      # Step 8: Configure kubeconfig for local cluster (Minikube/kind)
+      - name: Configure kubeconfig
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+          echo "✅ Kubeconfig file configured at $HOME/.kube/config"
+
+      # Step 9: Verify cluster connection
+      - name: Verify Kubernetes Connection
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
+
+      # Step 10: Deploy to Kubernetes
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f deployment.yaml --validate=false
