@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-test-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self hosted
 
     steps:
       # Step 1: Checkout the repo
@@ -40,13 +40,6 @@ jobs:
       # Step 7: Set up kubectl
       - name: Setup kubectl
         uses: azure/setup-kubectl@v4
-
-      # Step 8: Configure kubeconfig for Minikube or kind
-      - name: Configure kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > 
-          cat >R $HOME/.kube/config
 
       # Step 9: Deploy to Kubernetes
       - name: Deploy to Kubernetes
