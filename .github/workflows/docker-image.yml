@@ -6,24 +6,31 @@ on:
 
 jobs:
   build-test-deploy:
-    runs-on: self-hosted   # ✅ Use your local runner (where Docker + Minikube are installed)
+    runs-on: self-hosted   # ✅ Your local runner (Docker + Minikube/kind installed)
 
     steps:
       # Step 1: Checkout the repo
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python environment
-      - name: Set up Python
+      # Step 2: Install Python (for Windows self-hosted runners)
+      - name: Install Python (Windows)
+        if: runner.os == 'Windows'
         run: |
-         winget install python
-          uses: actions/setup-python@v4
-          # ✅ Correct format — no leading space, valid version
+          choco install python --version=3.12.1 -y
+          python --version
+
+      # Step 2 (Alternative): Set up Python (for Linux/macOS self-hosted runners)
+      - name: Set up Python
+        if: runner.os != 'Windows'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
 
       # Step 3: Install dependencies & run tests
       - name: Install dependencies & test
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install flask
           python -m unittest || echo "No tests found, skipping"
 
@@ -46,12 +53,12 @@ jobs:
       - name: Setup kubectl
         uses: azure/setup-kubectl@v4
 
-      # Step 8: Configure kubeconfig for local cluster (Minikube/kind)
+      # Step 8: Configure kubeconfig for Minikube/kind
       - name: Configure kubeconfig
         run: |
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
-          echo "✅ Kubeconfig file configured at $HOME/.kube/config"
+          echo "✅ Kubeconfig configured at $HOME/.kube/config"
 
       # Step 9: Verify cluster connection
       - name: Verify Kubernetes Connection
