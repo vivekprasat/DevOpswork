@@ -45,7 +45,8 @@ jobs:
       - name: Configure kubeconfig
         run: |
           mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > 
+          cat >R $HOME/.kube/config
 
       # Step 9: Deploy to Kubernetes
       - name: Deploy to Kubernetes
