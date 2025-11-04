@@ -44,10 +44,8 @@ jobs:
       # Step 8: Configure kubeconfig for Minikube or kind
       - name: Configure kubeconfig
         run: |
-         cat ~/.kube/config | base64
-         mkdir -p $HOME/.kube
+          mkdir -p $HOME/.kube
           echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
-
 
       # Step 9: Deploy to Kubernetes
       - name: Deploy to Kubernetes
