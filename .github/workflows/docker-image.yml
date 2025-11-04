@@ -13,19 +13,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Step 2: Install Python (for Windows self-hosted runners)
+      # Step 2: Install Python (Windows)
       - name: Install Python (Windows)
         if: runner.os == 'Windows'
+        shell: powershell
         run: |
           choco install python --version=3.12.1 -y
           python --version
-
-      # Step 2 (Alternative): Set up Python (for Linux/macOS self-hosted runners)
-      - name: Set up Python
-        if: runner.os != 'Windows'
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
+          python -m pip install --upgrade pip
 
       # Step 3: Install dependencies & run tests
       - name: Install dependencies & test
