@@ -1,0 +1,81 @@
+2025-11-05 09:12:22,205 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-05 09:12:22,206 INFO:[33mPress CTRL+C to quit[0m
+2025-11-05 09:12:22,208 INFO: * Restarting with stat
+2025-11-05 09:12:22,513 WARNING: * Debugger is active!
+2025-11-05 09:12:22,517 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:12:33,707 ERROR:Error occurred: Random failure occurred!
+2025-11-05 09:12:33,708 INFO:127.0.0.1 - - [05/Nov/2025 09:12:33] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-11-05 09:12:34,710 ERROR:Error occurred: Random failure occurred!
+2025-11-05 09:12:34,710 INFO:127.0.0.1 - - [05/Nov/2025 09:12:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-11-05 09:12:35,788 INFO:127.0.0.1 - - [05/Nov/2025 09:12:35] "GET / HTTP/1.1" 200 -
+2025-11-05 09:12:36,498 INFO:127.0.0.1 - - [05/Nov/2025 09:12:36] "GET / HTTP/1.1" 200 -
+2025-11-05 09:12:37,178 INFO:127.0.0.1 - - [05/Nov/2025 09:12:37] "GET / HTTP/1.1" 200 -
+2025-11-05 09:12:37,331 INFO:127.0.0.1 - - [05/Nov/2025 09:12:37] "GET / HTTP/1.1" 200 -
+2025-11-05 09:12:37,457 ERROR:Error occurred: Random failure occurred!
+2025-11-05 09:12:37,458 INFO:127.0.0.1 - - [05/Nov/2025 09:12:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-11-05 09:13:11,595 ERROR:Error occurred: Random failure occurred!
+2025-11-05 09:13:11,595 INFO:127.0.0.1 - - [05/Nov/2025 09:13:11] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-11-05 09:13:11,813 INFO:127.0.0.1 - - [05/Nov/2025 09:13:11] "GET / HTTP/1.1" 200 -
+2025-11-05 09:13:12,693 ERROR:Error occurred: Random failure occurred!
+2025-11-05 09:13:12,693 INFO:127.0.0.1 - - [05/Nov/2025 09:13:12] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-11-05 09:19:47,772 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:19:47,816 INFO: * Restarting with stat
+2025-11-05 09:19:48,186 WARNING: * Debugger is active!
+2025-11-05 09:19:48,190 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:19:56,357 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:19:56,402 INFO: * Restarting with stat
+2025-11-05 09:19:56,734 WARNING: * Debugger is active!
+2025-11-05 09:19:56,736 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:02,857 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:02,889 INFO: * Restarting with stat
+2025-11-05 09:20:03,186 WARNING: * Debugger is active!
+2025-11-05 09:20:03,190 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:07,295 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:07,332 INFO: * Restarting with stat
+2025-11-05 09:20:07,644 WARNING: * Debugger is active!
+2025-11-05 09:20:07,648 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:29,038 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:29,066 INFO: * Restarting with stat
+2025-11-05 09:20:29,349 WARNING: * Debugger is active!
+2025-11-05 09:20:29,352 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:30,388 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:30,451 INFO: * Restarting with stat
+2025-11-05 09:20:30,889 WARNING: * Debugger is active!
+2025-11-05 09:20:30,894 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:39,078 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:39,125 INFO: * Restarting with stat
+2025-11-05 09:20:39,443 WARNING: * Debugger is active!
+2025-11-05 09:20:39,446 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:41,502 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:41,542 INFO: * Restarting with stat
+2025-11-05 09:20:41,841 WARNING: * Debugger is active!
+2025-11-05 09:20:41,845 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:42,888 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:42,945 INFO: * Restarting with stat
+2025-11-05 09:20:43,238 WARNING: * Debugger is active!
+2025-11-05 09:20:43,240 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:44,277 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:44,307 INFO: * Restarting with stat
+2025-11-05 09:20:44,660 WARNING: * Debugger is active!
+2025-11-05 09:20:44,663 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:45,707 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:45,762 INFO: * Restarting with stat
+2025-11-05 09:20:46,076 WARNING: * Debugger is active!
+2025-11-05 09:20:46,079 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:49,149 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:49,213 INFO: * Restarting with stat
+2025-11-05 09:20:49,584 WARNING: * Debugger is active!
+2025-11-05 09:20:49,587 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:55,726 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:55,769 INFO: * Restarting with stat
+2025-11-05 09:20:56,146 WARNING: * Debugger is active!
+2025-11-05 09:20:56,149 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:20:57,187 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:20:57,237 INFO: * Restarting with stat
+2025-11-05 09:20:57,548 WARNING: * Debugger is active!
+2025-11-05 09:20:57,551 INFO: * Debugger PIN: 126-654-920
+2025-11-05 09:21:02,653 INFO: * Detected change in 'c:\\Users\\Vivek\\Awsassessment\\task7\\fix.py', reloading
+2025-11-05 09:21:02,687 INFO: * Restarting with stat
+2025-11-05 09:21:03,044 WARNING: * Debugger is active!
+2025-11-05 09:21:03,047 INFO: * Debugger PIN: 126-654-920
