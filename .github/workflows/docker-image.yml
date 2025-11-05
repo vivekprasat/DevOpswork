@@ -27,8 +27,8 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} 
 
       # Step 5: Build Docker image
-       name: Build Docker image
-        run: |
+      -  name: Build Docker image
+         run: |
           cd task3
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest .
           
