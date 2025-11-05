@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies & test
         run: |
           pip install flask
-          python -m unittest || echo "No tests found, skipping"
+          python -m unittest; echo "No tests found, skipping"
 
       # Step 4: Log in to Docker Hub
       - name: Log in to Docker Hub
