@@ -27,8 +27,11 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} 
 
       # Step 5: Build Docker image
-      - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest .
+       name: Build Docker image
+        run: |
+          cd task3
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest .
+          
 
       # Step 6: Push Docker image to Docker Hub
       - name: Push Docker image
@@ -42,5 +45,6 @@ jobs:
       # Step 9: Deploy to Kubernetes
       - name: Deploy to Kubernetes
         run: |
+          cd task3
           kubectl apply -f deployment.yaml --validate=false
           kubectl apply -f service.yaml --validate=false
