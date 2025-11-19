@@ -40,7 +40,7 @@ jobs:
 
       # Step 8: Set up kubectl
       - name: Set up kubectl
-        uses: azure/setup-kubectl@v
+        uses: azure/setup-kubectl@v4.0.0
 
       # Step 9: Deploy to Kubernetes
       - name: Deploy to Kubernetes
