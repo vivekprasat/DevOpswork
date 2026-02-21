@@ -6,6 +6,6 @@ spec:
   type: LoadBalancer # This is the key line
   ports:
     - port: 80 # The port external users connect to
-      targetPort: 8080 # The port your application is listening on in the pod
+      targetPort: 80 # The port your application is listening on in the pod
   selector:
-    app: my-application # Selects pods with the label "app: my-application"
+    app: flask # Selects pods with the label "app: my-application"
