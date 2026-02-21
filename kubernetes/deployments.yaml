@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: nginx
+        image: vivek342/applatest
         ports:
-        - containerPort: 80
+        - containerPort: 5000
