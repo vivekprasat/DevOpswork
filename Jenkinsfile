@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/vivekprasat/Awsassessment.git'
+            }
+        }
+
+        stage('build') {
+            steps {
+                dir('C:\\Users\\Vivek\\Awsassessment\\docker + jenkins') {
+                    bat "docker build -t myflaskapp:latest ."
+                    bat "docker run -d -p 80:5000 --name myflaskapp3 myflaskapp:latest"
+                }
+            }
+        }
+    }
+}
