@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: my-loadbalancer-service
 spec:
-  type: LoadBalancer # This is the key line
+  type: NodePort # This is the key line
   ports:
     - port: 5000 # The port external users connect to
       targetPort: 5000 # The port your application is listening on in the pod
